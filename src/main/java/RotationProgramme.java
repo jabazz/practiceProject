@@ -15,15 +15,31 @@ public class RotationProgramme {
 				} else {
 					table[i][j] = 0;
 				}
-
+		System.out.println("before");
+		showTable(table);
+		int temp = table[0][0];
+		System.out.println(table[0][0]);
+		int col = 0;
+		int flag = 0;
+		int row = 1;
+		for (int i= 0; i<4; i++){
+			table[flag][i] = temp;
+			if(row<4)
+			table[row++][0] = 0;
+		}
+		System.out.println("After");
 		showTable(table);
 		 rotateTableBottom(table);
 		 rotateTableRight(table);
 		 rotateTableUp(table);
 		 rotateDiagonal(table);
+		 
+		 
+		 
 
 	}
 
+	
 	public static void showTable(int[][] table) {
 		for (int x[] : table) {
 			for (int y : x) {
